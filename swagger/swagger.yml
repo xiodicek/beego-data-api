@@ -1,0 +1,88 @@
+swagger: "2.0"
+info:
+  title: Data Export API
+  description: データ抽出API
+  version: 0.0.1
+  termsOfService: http://beego.me/
+  contact:
+    email: xio.dicek.i11@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /v1
+paths:
+  /export/:
+    get:
+      tags:
+      - export
+      description: get data
+      operationId: ExportController.Get
+      parameters:
+      - in: query
+        name: service
+        description: The key for staticblock
+        required: true
+        type: string
+      - in: query
+        name: token
+        description: The key for staticblock
+        required: true
+        type: string
+      - in: query
+        name: from
+        description: The key for staticblock
+        type: string
+      - in: query
+        name: to
+        description: The key for staticblock
+        type: string
+      - in: query
+        name: output
+        description: The key for staticblock
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GoogleReport'
+        "400":
+          description: no enough input
+definitions:
+  models.AppsflyerReport:
+    title: AppsflyerReport
+    type: object
+    properties:
+      Datetime:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Param1:
+        type: string
+      Param2:
+        type: string
+      Param3:
+        type: string
+  models.GoogleReport:
+    title: GoogleReport
+    type: object
+    properties:
+      Datetime:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Param1:
+        type: string
+      Param2:
+        type: string
+      Param3:
+        type: string
+      Param4:
+        type: string
+      Param5:
+        type: string
+tags:
+- name: export
+  description: |
+    Operations about Export
