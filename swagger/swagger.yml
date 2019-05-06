@@ -15,30 +15,30 @@ paths:
     get:
       tags:
       - export
-      description: get data
+      description: データ抽出API
       operationId: ExportController.Get
       parameters:
       - in: query
         name: service
-        description: The key for staticblock
+        description: 抽出対象のサービスを指定
         required: true
         type: string
       - in: query
         name: token
-        description: The key for staticblock
+        description: 抽出対象のアカウントのトークンを指定
         required: true
         type: string
       - in: query
         name: from
-        description: The key for staticblock
+        description: 抽出対象期間の開始日時
         type: string
       - in: query
         name: to
-        description: The key for staticblock
+        description: 抽出対象期間の終了日時
         type: string
       - in: query
         name: output
-        description: The key for staticblock
+        description: レスポンス形式を指定 (json|xml|etc...)
         type: string
       responses:
         "200":

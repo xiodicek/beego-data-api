@@ -12,12 +12,12 @@ type ExportController struct {
 }
 
 // @Title Get
-// @Description get data
-// @Param	service	query 	string	true	"The key for staticblock"
-// @Param	token	query 	string	true	"The key for staticblock"
-// @Param	from	query 	string	false	"The key for staticblock"
-// @Param	to		query 	string	false	"The key for staticblock"
-// @Param	output	query 	string	false	"The key for staticblock"
+// @Description データ抽出API
+// @Param	service	query 	string	true	"抽出対象のサービスを指定"
+// @Param	token	query 	string	true	"抽出対象のアカウントのトークンを指定"
+// @Param	from	query 	string	false	"抽出対象期間の開始日時"
+// @Param	to		query 	string	false	"抽出対象期間の終了日時"
+// @Param	output	query 	string	false	"レスポンス形式を指定 (json|xml|etc...)"
 // @Success 200 {object} models.AppsflyerReport
 // @Success 200 {object} models.GoogleReport
 // @Failure 400 no enough input
